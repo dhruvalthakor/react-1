@@ -75,37 +75,37 @@ function From() {
           onSubmit={(e) => e.preventDefault()}
         >
         
-        <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">first name</label>
-    <input type="email" class="form-control" id="inputEmail4" value={data.frist} onChange={heandfristname}/>
+        <div className="col-md-6">
+    <label for="inputEmail4" className="form-label">first name</label>
+    <input type="email" className="form-control" id="inputEmail4" value={data.frist} onChange={heandfristname}/>
   </div>
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">last name</label>
-    <input type="password" class="form-control" id="inputPassword4" value={data.last} onChange={heandlestname}/>
+  <div className="col-md-6">
+    <label for="inputPassword4" className="form-label">last name</label>
+    <input type="password" className="form-control" id="inputPassword4" value={data.last} onChange={heandlestname}/>
   </div>
-  <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail4" value={data.email} onChange={heandemilname}/>
+  <div className="col-md-6">
+    <label for="inputEmail4" className="form-label">Email</label>
+    <input type="email" className="form-control" id="inputEmail4" value={data.email} onChange={heandemilname}/>
   </div>
-  <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Password</label>
-    <input type="password" class="form-control" id="inputPassword4" value={data.password} onChange={heandPassword}/>
+  <div className="col-md-6">
+    <label for="inputPassword4" className="form-label">Password</label>
+    <input type="password" className="form-control" id="inputPassword4" value={data.password} onChange={heandPassword}/>
   </div>
-  <div class="col-12">
-    <label for="inputAddress" class="form-label">Address</label>
-    <textarea type="text" class="form-control" id="inputAddress" value={data.Address} onChange={heandAddress}/>
+  <div className="col-12">
+    <label for="inputAddress" className="form-label">Address</label>
+    <textarea type="text" className="form-control" id="inputAddress" value={data.Address} onChange={heandAddress}/>
   </div>
-  <div class="col-md-4">
-    <label for="inputZip" class="form-label">Phone</label>
-    <input type="text" class="form-control" id="inputZip" value={data.Phone} onChange={heandPhone}/>
+  <div className="col-md-4">
+    <label for="inputZip" className="form-label">Phone</label>
+    <input type="text" className="form-control" id="inputZip" value={data.Phone} onChange={heandPhone}/>
   </div>
-  <div class="col-md-4">
-    <label for="inputCity" class="form-label">City</label>
-    <input type="text" class="form-control" id="inputCity" value={data.City} onChange={heandCity}/>
+  <div className="col-md-4">
+    <label for="inputCity" className="form-label">City</label>
+    <input type="text" className="form-control" id="inputCity" value={data.City} onChange={heandCity}/>
   </div>
-  <div class="col-md-4">
-    <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select"  value={data.State} onChange={heandstate}>
+  <div className="col-md-4">
+    <label for="inputState" className="form-label">State</label>
+    <select id="inputState" className="form-select"  value={data.State} onChange={heandstate}>
     <option  selected value="Gujarat">Gujarat</option>
     <option value="Andhra Pradesh">Andhra Pradesh</option>
     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -117,8 +117,8 @@ function From() {
   </div>
   
 
-  <div class="col-12">
-    <button type="submit" class="btn btn-success px-4">submit</button>
+  <div className="col-12">
+    <button type="submit" className="btn btn-success px-4">submit</button>
   </div>
         </form>
       </div>
