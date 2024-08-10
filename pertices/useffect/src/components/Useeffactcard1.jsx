@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 function Useeffactcard1() {
 
-
     const[id,setid]=useState(1)
     const[prodect,setprodect]=useState(null)
     
@@ -47,7 +46,7 @@ function Useeffactcard1() {
 
 ):(
     <>
-    hhh
+    loading
     </>
 )}
 

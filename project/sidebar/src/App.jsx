@@ -1,12 +1,11 @@
-import Textlist from "./component/Textlist"
 
 
 function App() {
-
+  
 
   return (
     <>
-     <Textlist/>
+      
     </>
   )
 }
