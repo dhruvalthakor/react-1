@@ -4,13 +4,13 @@ function Cartcount() {
 
     const[count,setcount]=useState(0);
 
-function Decrement(params) {
+function Decrement() {
   if (count!=0) {
     setcount(count-1)
   }
 }
 
-function Increment(params) {
+function Increment() {
 
     setcount(count+1)
 

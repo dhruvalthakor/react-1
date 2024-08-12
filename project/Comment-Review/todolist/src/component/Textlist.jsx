@@ -39,6 +39,7 @@ function Textlist() {
     function deletehandler(index) {
 
         setlists(lists.filter((ele, i) => i != index))
+        
     }
 
 
