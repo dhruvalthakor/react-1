@@ -48,7 +48,7 @@ function Textlist() {
                 <div className="card-body text-center">
                     <h3 className="mb-4">Todolist</h3>
                     <input
-                        type="text"
+                        type="text"z
                         className="form-control mb-3 rounded-pill shadow-sm"
                         placeholder="Enter your task..."
                         value={task.name}
