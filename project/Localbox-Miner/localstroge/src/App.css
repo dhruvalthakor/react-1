@@ -1,0 +1,59 @@
+/* Custom CSS for the UI */
+
+.container {
+    background: linear-gradient(135deg, #2b2b2b, #1e1e1e);
+    border-radius: 15px;
+    padding: 2rem;
+    color: #fff;
+}
+
+input {
+    border-radius: 25px;
+    padding: 0.75rem;
+    border: none;
+    outline: none;
+}
+
+button {
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #007bff;
+    transform: scale(1.05);
+}
+
+.row {
+    margin-bottom: 1rem;
+}
+
+.card {
+    background-color: #343a40;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.card .btn {
+    margin-left: 0.5rem;
+}
+
+.card .btn i {
+    font-size: 1.2rem;
+}
+
+.card .btn-success:hover {
+    background-color: #28a745;
+}
+
+.card .btn-danger:hover {
+    background-color: #dc3545;
+}
