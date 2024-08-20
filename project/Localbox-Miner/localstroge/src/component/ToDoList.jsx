@@ -44,9 +44,9 @@ alert("Enter a task")
   //   Delete 
 
   function handleTaskDelete(id) {
-    console.log("delete");
+
     setItems(items.filter((e) => e.id !== id));
-    console.log(id);
+
   }
 
   //   Edit
