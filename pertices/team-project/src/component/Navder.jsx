@@ -2,30 +2,34 @@ import React, { useState } from 'react';
 import SessionStorage from './SessionStorage';
 import Textlist from './Textlist';
 import Display from './Display';
+import Home from './Home';
+import Team from './Team';
 
 function Navder() {
   const [currentView, setCurrentView] = useState('home');
 
   const renderView = () => {
-    switch (currentView) {
-      case 'home':
-        return <div>Home Content</div>;
-      case 'team':
-        return <div>Team Content</div>;
-      case 'sessionStorage':
-        return <SessionStorage />;
-      case 'localStorage':
-        return <Textlist/>;
-        case 'Display':
-          return <Display/>;
-      default:
-        return <div>Home Content</div>;
-    }
+   if (currentView== 'home') {
+    return <Home/>;
+   }else if (currentView== 'team'){
+    return <Team/>;
+   } else if (currentView== 'sessionStorage'){
+     return <SessionStorage />;
+   } else if (currentView== 'localStorage'){
+    return <Textlist/>;
+   } else if (currentView== 'Display'){
+    return <Display/>;
+   } else{
+    return <div>Home Content</div>;
+   }
+      
+    
   };
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+   <header>
+   <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="#" onClick={() => setCurrentView('home')}>Navbar</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,9 +60,28 @@ function Navder() {
           </div>
         </div>
       </nav>
-      <div className="container mt-4">
+   </header>
+    <main>
+      <section>
+      <div className="">
         {renderView()}
       </div>
+      </section>
+    </main>
+ 
+    <footer className="bg-body-tertiary text-center text-lg-start">
+    <div class="card rounded-0" data-bs-theme="dark">
+                <div class="container d-flex justify-content-between rounded-5 my-3 card-footer text-body-secondary">
+                    <h6 className='m-0'> © Copyright 2024. ShopNow PVT LTD. All Rights Reserved.</h6>
+                 <div>
+                 <a href="#" className="text-decoration-none "><i className="fa-brands fa-linkedin fa-xl"></i></a>
+                 <a href="#" className="text-decoration-none ms-3"><i className="fa-brands fa-github fa-xl"></i></a>
+                 </div>
+                </div>
+            </div>
+ 
+</footer>
+
     </>
   );
 }

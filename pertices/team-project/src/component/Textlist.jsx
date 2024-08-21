@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react'
 
 let nextId = 0;
 
-function Textlist() {
+function Textlist(
+ 
+) {
     const [task, setTask] = useState("");
     const [items, setItems] = useState(()=>{
         return JSON.parse(localStorage.getItem("tasks")) || []
@@ -63,6 +65,8 @@ function Textlist() {
         setEditingId(null); 
     }
     return (
+        <div>
+            
         <div className="container  text-white my-4 border border-3 rounded-4 border-dark shadow p-4">
         <h1 className="text-center text-black mb-4">Todo List with Local Storage</h1>
     
@@ -74,18 +78,18 @@ function Textlist() {
                     }}
                     disabled={editingId !== null}
                     className="input-group"
-                >
+                    >
                     <input
                         type="text"
                         className="form-control"
                         placeholder="Enter a task"
                         value={task}
                         onChange={(e) => setTask(e.target.value)}
-                    />
+                        />
                     <button
                         className="btn btn-danger text-white"
                         onClick={editingId !== null ? handleTaskUpdate : handleTaskAdd}
-                    >
+                        >
                         {editingId !== null ? "Update Task" : "Add Task"}
                     </button>
                 </form>
@@ -94,6 +98,7 @@ function Textlist() {
     
     </div>
     
+                        </div>
     );
 }
 
