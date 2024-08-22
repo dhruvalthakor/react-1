@@ -9,7 +9,7 @@ function Display() {
   return (
     <>
      <div className="container">
-     <div className="row g-3">
+     <div className="row g-3 mb-4 mt-3">
             {items.map((item) => (
                 <div
                     key={item.id}

@@ -54,8 +54,13 @@ function SessionStorage() {
         const taskToSave = items.find((item) => item.id === id);
         if (taskToSave) {
             setsave([...save, taskToSave]);
+         
         }
+        console.log("delete");
+        setItems(items.filter((e) => e.id !== id));
+        console.log(id);
     }
+   
 
     function handleModalOpen(item) {
         setSelectedItem(item); // Set the selected item to the state
@@ -93,7 +98,8 @@ function SessionStorage() {
                 </div>
 
                 <div className="row g-3">
-                    <div className="col-6">
+                    <div className="col-6 border border-2 p-3">
+                        <h2 className="text-center">add tasks</h2>
                         {items.map((item) => (
                             <div
                                 key={item.id}
@@ -105,12 +111,12 @@ function SessionStorage() {
 
                                     <button
                                         type="button"
-                                        className="btn btn-danger"
+                                        className="btn btn-dark d-flex justify-content-center align-items-center w-25"style={{height:"20px"}}
                                         data-bs-toggle="modal"
                                         data-bs-target="#exampleModal"
                                         onClick={() => handleModalOpen(item)}
                                     >
-                                        <div className="form-check">
+                                        <div className="form-check d-flex justify-content-center">
                                             <input className="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
                                             <label className="form-check-label" htmlFor="flexCheckIndeterminate">
                                             </label>
@@ -120,7 +126,8 @@ function SessionStorage() {
                             </div>
                         ))}
                     </div>
-                    <div className="col-6">
+                    <div className="col-6 border border-2 p-3">
+                        <h3 className="text-center ">save tesks</h3>
                         {save.map((i) => (
                             <div
                                 key={i.id}

@@ -6,7 +6,7 @@ function Team() {
         <>
             <div className='container row gap-4 m-auto justify-content-center mt-5'>
                 <h1 className='text-center m-0'>PROFILE</h1>
-                <div class="col-5 card mb-3" style={{ maxwidth: "540px" }}>
+                <div class="col-5 card mb-3 p-0" style={{ maxwidth: "540px" }}>
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="src/assets/photo_2024-08-21_09-53-35.jpg" class="img-fluid rounded-start" alt="..." />
@@ -21,7 +21,7 @@ function Team() {
                         </div>
                     </div>
                 </div>
-                <div class="col-5 card mb-3" style={{ maxwidth: "540px" }}>
+                <div class="col-5 card mb-3 p-0" style={{ maxwidth: "540px" }}>
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="src/assets/photo_2024-08-21_09-53-43.jpg" class="img-fluid rounded-start" alt="..." />
