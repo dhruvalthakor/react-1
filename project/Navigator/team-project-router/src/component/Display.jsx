@@ -7,7 +7,7 @@ function Display() {
     let [editId, setEditId] = useState(null);
 
     let finalData = items.map((item) =>
-        <li key={item.id} className='d-flex justify-content-between my-2'>
+        <li key={item.id} className='d-flex justify-content-between my-2 bg-dark text-white rounded rounded-4 p-3'>
             {item.task}
             <span>
                 <button className='btn btn-danger' onClick={() => editHendler(item)}>Edit</button>
