@@ -28,7 +28,7 @@ function Navber() {
 
                 </li>
                 <li className="nav-item">
-                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/Textlist">Textlist</NavLink>
+                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/Textlist">localStorage</NavLink>
 
                 </li>
                 <li className="nav-item">

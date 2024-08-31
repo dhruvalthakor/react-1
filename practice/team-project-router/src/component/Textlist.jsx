@@ -2,67 +2,63 @@ import React, { useEffect, useState } from 'react'
 
 let nextId = 0;
 
-function Textlist(
- 
-) {
-    const [task, setTask] = useState("");
-    const [items, setItems] = useState(()=>{
-        return JSON.parse(localStorage.getItem("tasks")) || []
-    });
-    
-    const [editingId, setEditingId] = useState(null); 
+function Textlist() {
+   
+    let [task, setTask] = useState("");
+    let [items, setItems] = useState(JSON.parse(localStorage.getItem("lsItems")) || []); // get items in localStorage
+    let [editId, setEditId] = useState(null);
 
 
-
+    // Store in LocalStorage
     useEffect(() => {
-        localStorage.setItem("tasks", JSON.stringify(items))
+        localStorage.setItem("lsItems", JSON.stringify(items))
     }, [items])
 
 
-    function handleTaskAdd() {
-        if (task) {
-            setItems([...items, { id: nextId++, task: task }]);
-            setTask(""); 
-          }else{
-        alert("Enter a task")
-          }
+    function addHandler() {
+        if (task !== "") {
+            setItems([...items, { id: nextId++, task: task }])
+            setTask("")
+        } else {
+            alert("Enter value")
+        }
     }
 
- 
+    let finalData = items.map((item) =>
+        <li key={item.id} className='d-flex justify-content-between my-2 text-black'>
+            {item.task}
+            <span>
+                <button className='btn btn-success' onClick={() => editHendler(item.id, item.task)}>Edit</button>
+                <button className='btn btn-success ms-2' onClick={() => deleteHendler(item.id)}>Delete</button>
+            </span>
+        </li>
+    )
 
-    //   Delete 
+    // Delete task 
+    function deleteHendler(id) {
+        setItems(items.filter((e) => e.id !== id))
+        console.log("deleted");
 
-    function handleTaskDelete(id) {
-        console.log("delete");
-        setItems(items.filter((e) => e.id !== id));
-        console.log(id);
     }
 
-    //   Edit 
-
-    function handleTaskEdit(id) {
-        const editedTask = items.find((item) => item.id === id);
-        setTask(editedTask.task); 
-        setEditingId(id); 
+    // Edit task 
+    function editHendler(id, t) {
+        setTask(t)
+        setEditId(id)
     }
 
-    //   Update 
-
-    function handleTaskUpdate() {
-        setItems(
-            items.map((item) => {
-              if (task) {
-                if (item.id === editingId) {
-                    return  { ...item, task: task }; 
-                }
-              }else{
-                alert("Enter a task")
-              }
-                return item;
-            })
-        );
-        setTask("");
-        setEditingId(null); 
+    // Update task
+    function updateHandler() {
+        if (task !== "") {
+            let one = items.map((item) =>
+                (item.id === editId) ? ({ ...item, task: task }) : (item)
+            )
+            setItems(one)
+            setTask("")
+            setEditId(null)
+        } else {
+            alert("Enter value")
+        }
     }
     return (
         <div>
@@ -76,7 +72,7 @@ function Textlist(
                     onSubmit={(e) => {
                         e.preventDefault();
                     }}
-                    disabled={editingId !== null}
+                    disabled={editId !== null}
                     className="input-group"
                     >
                     <input
@@ -88,14 +84,13 @@ function Textlist(
                         />
                     <button
                         className="btn btn-danger text-white"
-                        onClick={editingId !== null ? handleTaskUpdate : handleTaskAdd}
-                        >
-                        {editingId !== null ? "Update Task" : "Add Task"}
+                        onClick={(editId == null) ? (addHandler) : (updateHandler)}>
+                        {(editId == null) ? "Add" : "Update"}
                     </button>
                 </form>
             </div>
         </div>
-    
+
     </div>
     
                         </div>
