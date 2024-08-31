@@ -1,0 +1,71 @@
+.parent{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.image{
+    height: 120px;
+    width: 100px;
+    
+    border-radius: 5px;
+    margin-top: 55px;
+    margin-right: -100px;
+    
+}
+.image>img{
+    height: 115px;
+    width: 95px;
+    object-fit: cover;
+    border-radius: 5px;
+    position: sticky;
+}
+.child{
+    height: 100%;
+    width: 35%;
+   
+    padding: 55px;
+    background-color: rgb(255,255,255);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.child>h2{
+    margin-bottom: 5px;
+    
+}
+.child>h3{
+    margin-bottom: 20px;
+    color: rgb(135,135,135);
+    font-weight: 400;
+}
+.child>p{
+    font-size: 18px;
+   text-align: inherit;
+   color: rgb(100, 100, 100);
+   font-weight: 400;
+}
+
+a{
+    text-decoration: none !important;
+    color: rgb(1, 4, 7) !important;
+  
+  }
+.crimson{
+    background-color: crimson;
+    color: aliceblue !important;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
