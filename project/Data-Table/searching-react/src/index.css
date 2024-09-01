@@ -1,0 +1,14 @@
+body{
+  background-color:black !important;
+}
+a{
+  text-decoration: none !important;
+  color:white !important;
+
+}
+.crimson{
+  background-color: rgb(226, 89, 10);
+  color: aliceblue !important;
+  padding: 10px;
+  border-radius: 10px;
+}
