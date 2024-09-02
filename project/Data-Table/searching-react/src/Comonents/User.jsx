@@ -27,8 +27,7 @@ function User() {
                 width: "400px",
                 height: "auto",
                 // maxHeight: "auto",
-                backgroundColor: "#2c3e50",
-                color: "#ecf0f1",
+             
                 border: "3px solid #34495e",
             }}
             key={product.id}
