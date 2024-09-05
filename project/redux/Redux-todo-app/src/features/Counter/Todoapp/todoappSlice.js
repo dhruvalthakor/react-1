@@ -29,12 +29,15 @@ const todoappSlice = createSlice({
    
     state.tasks=state.tasks.filter((e) => e.id !==action.payload);
 
-   
-    
     },
+    editehender: (state,action) => {
+       console.log(action.payload);
+      
+       
+        },
   },
 });
 
-export const { addhender, deletehender } = todoappSlice.actions;
+export const { addhender, deletehender, editehender} = todoappSlice.actions;
 
 export default todoappSlice.reducer;
