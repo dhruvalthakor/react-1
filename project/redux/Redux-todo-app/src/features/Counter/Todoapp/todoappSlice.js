@@ -14,15 +14,7 @@ const todoappSlice = createSlice({
   initialState,
   reducers: {
     addhender: (state, action) => {
-    // console.log(action.payload);
-    
-      state.tasks.push({
-        id: action.payload.id,
-        task: action.payload.task,
-      });
-
-
-      // console.log(state.tasks); 
+      state.tasks.push(action.payload);
     },
     deletehender: (state,action) => {
   //  console.log(action.payload);
@@ -30,14 +22,18 @@ const todoappSlice = createSlice({
     state.tasks=state.tasks.filter((e) => e.id !==action.payload);
 
     },
-    editehender: (state,action) => {
-       console.log(action.payload);
+    editHandler: (state, action) => {
+    
+      const existingTask = state.tasks.find((item) => item.id === action.payload.id);
+        console.log(existingTask);
       
-       
-        },
+      if (existingTask) {
+        existingTask.task = action.payload.task;
+      }
+    },
   },
 });
 
-export const { addhender, deletehender, editehender} = todoappSlice.actions;
+export const { addhender, deletehender, editHandler} = todoappSlice.actions;
 
 export default todoappSlice.reducer;

@@ -1,7 +1,7 @@
 
 import React, {useEffect ,useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addhender, deletehender, editehender } from "../features/Counter/Todoapp/todoappSlice";
+import { addhender, deletehender, editHandler } from "../features/Counter/Todoapp/todoappSlice";
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -16,7 +16,33 @@ function Applist() {
 
 
 
+  function handleTaskAdd() {
+    if (task) {
+      const newTask = { id: uuidv4(), task };
+      dispatch(addhender(newTask))
+      setTask("");
+    } else {
+      alert("enter")
+    }
+  }
 
+  function handleTaskUpdate() {
+    const updatedTask = { id: editingId, task };
+   
+    dispatch(editHandler(updatedTask));
+    setTask("");
+    setEditingId(null);
+  }
+
+  function handleTaskEdit(id) {
+ 
+    
+    const editedTask = tasks.find((item) => item.id === id);
+    
+    setTask(editedTask.task); 
+    setEditingId(id); 
+    
+  }
 
   const itemData = tasks.map((item) => (
     <div
@@ -27,13 +53,14 @@ function Applist() {
       <div className="col-4 col-md-3 text-end">
         <button
           className="btn btn-success mx-1"
-          onClick={() => dispatch(editehender( item.id))}
+          onClick={() => handleTaskEdit(item.id)}
         >
           Edit
         </button>
         <button
           className="btn btn-danger mx-1"
           onClick={() => dispatch(deletehender(item.id))}
+          
         >
           Delete
         </button>
@@ -58,7 +85,7 @@ function Applist() {
             onSubmit={(e) => {
               e.preventDefault();
             }}
-            disabled={editingId !== null}
+           
           >
             <input
               type="text"
@@ -68,21 +95,12 @@ function Applist() {
               onChange={(e) => setTask(e.target.value)}
             />
         
-            <button
-              className="btn btn-info mx-1 mt-3"
-              onClick={() => {
-                if (task) {
-                  const newTask = { id: uuidv4(), task };
-                  dispatch(addhender(newTask))
-                  setTask("");
-                } else {
-                  alert("enter")
-                }
-              }}
-             
-            >
-             Add
-            </button>
+        <button
+  className="btn btn-info mx-1 mt-3"
+  onClick={editingId !== null ? handleTaskUpdate : handleTaskAdd}
+>
+  {editingId !== null ? "Update" : "Add"}
+</button>
           </form>
         </div>
       </div>
