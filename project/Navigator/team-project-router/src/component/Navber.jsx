@@ -15,24 +15,24 @@ function Navber() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-4 flex-grow-0 w-100 justify-content-center">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-4 flex-grow-0 w-100 justify-content-center text-black">
                 <li className="nav-item">
-                  <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/">Home</NavLink>
+                  <NavLink className={(e) => e.isActive ? "crimson" : "black"} to="/">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/team">Team</NavLink>
+                <NavLink className={(e) => e.isActive ? "crimson" : "black"} to="/team">Team</NavLink>
 
                 </li>
                 <li className="nav-item">
-                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/SessionStorage">SessionStorage</NavLink>
+                <NavLink className={(e) => e.isActive ? "crimson" : "black"} to="/SessionStorage">SessionStorage</NavLink>
 
                 </li>
                 <li className="nav-item">
-                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/Textlist">localStorage</NavLink>
+                <NavLink className={(e) => e.isActive ? "crimson" : "black"} to="/Textlist">localStorage</NavLink>
 
                 </li>
                 <li className="nav-item">
-                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/Display">Display</NavLink>
+                <NavLink className={(e) => e.isActive ? "crimson" : "black"} to="/Display">Display</NavLink>
 
                 </li>
               </ul>

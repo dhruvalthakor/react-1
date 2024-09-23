@@ -56,7 +56,12 @@ a{
     padding: 10px;
     border-radius: 10px;
   }
+  .black{
 
+    color: rgb(3, 4, 5) !important;
+    padding: 10px;
+    border-radius: 10px;
+  }
 
 
 

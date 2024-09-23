@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Filtering from './Comonents/Filtering';
+import Sorting from './Comonents/Sorting';
 
 
 function App() {
@@ -18,10 +19,10 @@ function App() {
       path: "/User",
       element:<><Navber/><User/></>,
     },
-    {
-      path: "/SessionStorage",
-      element:<><Navber/></>,
-    },
+    // {
+    //   path: "/Sorting",
+    //   element:<><Navber/><Sorting/></>,
+    // },
   
   ]);
 

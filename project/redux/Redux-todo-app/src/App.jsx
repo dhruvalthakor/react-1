@@ -8,8 +8,13 @@ function App() {
     <>
     <div className="container">
     <div className="row">
-      <div className="col-7"> <Applist/></div>
-      <div className="col-5"> <Counter/></div>
+      <div className="col-12"> 
+        <div>
+
+        <Applist/>
+        </div>
+        </div>
+      {/* <div className="col-5"> <Counter/></div> */}
     </div>
     </div>
   

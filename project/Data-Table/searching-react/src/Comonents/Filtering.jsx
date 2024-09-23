@@ -26,7 +26,8 @@ function Filtering() {
         .filter(({ category }) => {
             return filter?category === filter:user;
 
-        }).filter(({ title }) => {
+        })
+        .filter(({ title }) => {
             return title.indexOf(Data) >= 0;
         })
         .map((product) => (

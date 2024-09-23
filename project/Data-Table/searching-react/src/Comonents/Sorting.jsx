@@ -1,8 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 
 function Sorting() {
-    const [filter, setFilter] = useState(''); 
-    const [user, setUser] = useState([]); 
+
+
+
+    const [filter, setFilter] = useState('');
+    const [sorting, setSorting] = useState('');
+    const [Data, setData] = useState("")
+
+    const [user, setUser] = useState([]);
 
     useEffect(() => {
         async function dataHandling() {
@@ -10,9 +16,11 @@ function Sorting() {
                 let fetchs = await fetch(`https://fakestoreapi.com/products`);
                 let data = await fetchs.json();
                 setUser(data);
-               
+                console.log(data);
+
+
             } catch (error) {
-                console.log ("Error fetching data:", error);
+                console.log("Error fetching data:", error);
             }
         }
         dataHandling();
@@ -20,16 +28,19 @@ function Sorting() {
 
     let filteredData = user
         .filter(({ category }) => {
-            return category.toLowerCase().includes(filter.toLowerCase());
+            return filter ? category === filter : user;
+
+        }).filter(({ title }) => {
+            return title.indexOf(Data) >= 0;
         })
         .map((product) => (
+            
             <div
                 className="card"
                 style={{
                     width: "400px",
                     height: "auto",
-                    backgroundColor: "#2c3e50",
-                    color: "#ecf0f1",
+
                     border: "3px solid #34495e",
                 }}
                 key={product.id}
@@ -72,27 +83,42 @@ function Sorting() {
             </div>
         ));
 
+
     return (
         <>
-            <div className="text-center bg-dark p-3 d-flex flex-column justify-content-center gap-5 align-items-center">
-                 {/* sorting */}
-                 <div>
-               <select class="form-select" aria-label="Default select example">
-                    <option selected>allsection</option>
-                    <option value="1">mensection</option>
-                    <option value="2">womensection</option>
-                    <option value="3">jewelerysection</option>
-                    <option value="3">electronicssection</option>
-                    
-                </select>
-               </div>
+            <div className="text-center  p-3 d-flex  justify-content-center gap-5 align-items-center">
 
-                <div className="d-flex flex-wrap justify-content-center align-items-center mt-3 gap-3">
-                    {filteredData}
+                {/* Filtering */}
+                <div>
+                    <select className="form-select" aria-label="Category select" value={filter} onChange={(e) => setFilter(e.target.value)}>
+                        <option value="">All Categories</option>
+                        <option value="men's clothing">Men's Clothing</option>
+                        <option value="women's clothing">Women's Clothing</option>
+                        <option value="jewelery">Jewelry</option>
+                        <option value="electronics">Electronics</option>
+                    </select>
                 </div>
+                <div className="input-group  w-50">
+                    <span className="input-group-text" id="basic-addon1">userInput</span>
+                    <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={Data} onChange={(e) => setData(e.target.value)} />
+                </div>
+                <select className="form-select w-25" aria-label="Category select" value={sorting} onChange={(e) => setSorting(e.target.value)}>
+        <option value="">All Categories</option>
+        <option value="50">0 to 50</option>
+        <option value="100">50 to 100</option>
+        <option value="500">100 to 500</option>
+        <option value="1000">500 to 1000</option>
+    </select>
+            </div>
+            <div className="d-flex flex-wrap justify-content-center align-items-center mt-3 gap-3">
+                {filteredData}
             </div>
         </>
-    );
+    )
 }
 
-export default Sorting;
+export default Sorting
+
+
+
+

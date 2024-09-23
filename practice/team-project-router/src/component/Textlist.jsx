@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 
 let nextId = 0;
 
 function Textlist() {
+ 
    
     let [task, setTask] = useState("");
     let [items, setItems] = useState(JSON.parse(localStorage.getItem("lsItems")) || []); // get items in localStorage
@@ -60,11 +61,12 @@ function Textlist() {
             alert("Enter value")
         }
     }
+    length=items.length
     return (
         <div>
             
         <div className="container  text-white my-4 border border-3 rounded-4 border-dark shadow p-4">
-        <h1 className="text-center text-black mb-4">Todo List with Local Storage</h1>
+        <h1 className="text-center text-black mb-4">Todo List with Local Storage  </h1>
     
         <div className="row justify-content-center mb-4">
             <div className="col-md-8 col-lg-6">

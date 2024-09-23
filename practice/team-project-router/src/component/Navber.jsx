@@ -10,7 +10,7 @@ function Navber() {
       <header>
         <nav className="navbar navbar-expand-lg">
           <div className="container-fluid">
-          <a className="navbar-brand" href="#"><span className='text-danger fw-bold fs-4'>D & S</span></a>
+          <a className="navbar-brand" href="#"><span className='text-danger fw-bold fs-4'>D {length}</span></a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -21,18 +21,17 @@ function Navber() {
                 </li>
                 <li className="nav-item">
                 <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/team">Team</NavLink>
-
                 </li>
                 <li className="nav-item">
                 <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/SessionStorage">SessionStorage</NavLink>
 
                 </li>
                 <li className="nav-item">
-                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/Textlist">localStorage</NavLink>
+                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/Textlist" length>localStorage</NavLink>
 
                 </li>
                 <li className="nav-item">
-                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/Display">Display</NavLink>
+                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/Display"  >Display</NavLink>
 
                 </li>
               </ul>

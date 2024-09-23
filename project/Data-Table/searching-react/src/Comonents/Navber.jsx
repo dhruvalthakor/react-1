@@ -23,10 +23,10 @@ function Navber() {
                 <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/User">Searching</NavLink>
 
                 </li>
-                <li className="nav-item">
-                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/SessionStorage">Sorting</NavLink>
+                {/* <li className="nav-item">
+                <NavLink className={(e) => e.isActive ? "crimson" : ""} to="/Sorting">Sorting</NavLink>
 
-                </li>
+                </li> */}
               </ul>
              
             </div>

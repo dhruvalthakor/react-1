@@ -64,7 +64,7 @@ function Textlist() {
         <div>
             
         <div className="container  text-white my-4 border border-3 rounded-4 border-dark shadow p-4">
-        <h1 className="text-center text-black mb-4">Todo List with Local Storage</h1>
+        <h1 className="text-center text-black mb-4">Todo List with Local Storage </h1>
     
         <div className="row justify-content-center mb-4">
             <div className="col-md-8 col-lg-6">

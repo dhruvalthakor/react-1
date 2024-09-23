@@ -16,12 +16,9 @@ function From() {
       State:" "
     })
 
-  function heandfristname(e) {
-    setdata({
-      ...data,
-      frist:e.target.value
-    })
-  }
+  // function heandfristname(e) {
+  
+  // }
 
   function heandlestname(e) {
     setdata({
@@ -77,7 +74,14 @@ function From() {
         
         <div className="col-md-6">
     <label for="inputEmail4" className="form-label">first name</label>
-    <input type="email" className="form-control" id="inputEmail4" value={data.frist} onChange={heandfristname}/>
+    <input type="text" className="form-control" id="inputEmail4" 
+    value={data.frist}
+    
+
+     onChange={(e)=>  setdata({
+      ...data,
+      frist:e.target.value
+    })}/>
   </div>
   <div className="col-md-6">
     <label for="inputPassword4" className="form-label">last name</label>
