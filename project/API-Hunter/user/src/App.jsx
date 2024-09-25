@@ -9,6 +9,7 @@ import Login from './component/Login';
 import Home from './component/Home';
 import Forgotpassword from './component/Forgotpassword';
 import Navbar from './component/Navbar';
+import Footer from './component/Footer';
 
 function App() {
   const router = createBrowserRouter([
@@ -22,7 +23,7 @@ function App() {
     },
     {
       path: "/home",
-      element: <><Home/></>,
+      element: <><Home/><Footer/></>,
     },
     {
       path: "/Forgotpassword",

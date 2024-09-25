@@ -28,7 +28,7 @@ function Signup() {
 
             if (existingUser) {
                 if (existingUser.password === form.password) {
-                    console.log("Login successful")
+                   
                     navigate("/login")
                 } else {
                     alert("Invalid password")

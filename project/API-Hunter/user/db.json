@@ -3,9 +3,16 @@
     {
       "name": "Nishitgadav",
       "email": "test@email.com",
-      "password": "adxadc",
+      "password": "678",
       "id": 1
     }
-   
+  ],
+  "login": [
+    {
+      "name": "Nishitgadav",
+      "email": "test@email.com",
+      "password": "678",
+      "id": 1
+    }
   ]
 }

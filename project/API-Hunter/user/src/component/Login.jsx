@@ -20,18 +20,25 @@ function Login() {
     const formSubmit = (e) => {
         e.preventDefault()
 
-        // Validation for empty fields
+     
         if (!form.email || !form.password) {
             alert("All fields are required.")
             return
         }
 
-        // Check if email exists and password matches
+        
         const user = users.find((item) => item.email === form.email)
+
 
         if (user) {
             if (user.password === form.password) {
-                console.log("Login successful")
+
+                axios.post(`http://localhost:4040/login`, user)
+                .then((res) => {
+                    console.log("User created", res.data)
+                })
+                .catch(err => console.log(err))
+                
                 navigate("/home")
             } else {
                 alert("Invalid password")

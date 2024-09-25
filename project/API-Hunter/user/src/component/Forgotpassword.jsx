@@ -6,17 +6,19 @@ import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const steps = ['Enter email', 'Set new password', 'chenga password'];
 
 function Forgotpassword() {
     const [activeStep, setActiveStep] = useState(0);
     const [users, setUsers] = useState([])
-    const [password, setpassword] = useState("")
+    const [chenga, setchenga] = useState("")
     const [form, setForm] = useState({
         email: "",
         password: ""
     })
+    const navigate = useNavigate()
     const [skipped, setSkipped] = useState(new Set());
     // app get 
     useEffect(() => {
@@ -46,8 +48,8 @@ function Forgotpassword() {
   // Step-specific logic
   if (activeStep === 0) {
     const user = users.find((item) => item.email === form.email);
-    setpassword(user)
-    console.log(password);
+    setchenga(user)
+
     
     if (!user) {
         alert("User not found! Please enter a valid email.");
@@ -56,14 +58,24 @@ function Forgotpassword() {
 }
 
 if (activeStep === 1) {
-    if (password==users.password) {
-        console.log(password);
-        
-        // alert("User not found! Please enter a valid email.");
-        // return;
-    }
+    chenga.password= form.password
+    console.log(chenga);
+
 }
 
+if (activeStep === 2) {
+    axios.put(`http://localhost:4040/users/${chenga.id}`,chenga)
+      .then((res) => {
+        console.log(res);
+        navigate("/login")
+      })
+      .catch((err) => console.log(err));
+
+
+  
+setchenga("")
+
+}
 
 
 
