@@ -1,21 +1,51 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Api() {
   const [data, setData] = useState([]);
   const [main, setMain] = useState([]);
 
-  useEffect(() => {
-    axios.get('http://localhost:4040/users')
+  const navigate = useNavigate();
+
+// function maindata() {
+  // axios.get('http://localhost:4040/users')
+  // .then((res) => {
+  //   setData(Object.keys(res.data[0]));
+  //   setMain(res.data);
+  // })
+  // .catch((err) => console.log(err));
+// }
+
+
+    useEffect(() => {
+      axios.get('http://localhost:4040/users')
+  .then((res) => {
+    setData(Object.keys(res.data[0]));
+    setMain(res.data);
+  })
+  .catch((err) => console.log(err));
+    }, []);
+ 
+
+
+  function deletehe(i) {
+
+    axios.delete(`http://localhost:4040/users/${i}`)
       .then((res) => {
-        setData(Object.keys(res.data[0]));
-        setMain(res.data);
+        console.log(res.data);
+        navigate("/")
       })
       .catch((err) => console.log(err));
-  }, []);
 
+   
+  }
+
+
+  // maindata()
+
+  
   return (
     <div className="container my-5">
       <div className="text-center mb-4">
@@ -30,11 +60,11 @@ function Api() {
             <thead>
               <tr>
                 {data.map((e, i) => (
-            
+
                   <th key={i} scope="col" className="text-uppercase">{e}</th>
-             
+
                 ))}
-                <th  scope="col" className="text-uppercase"> action</th>
+                <th scope="col" className="text-uppercase"> action</th>
               </tr>
             </thead>
             <tbody>
@@ -44,14 +74,14 @@ function Api() {
                   <td>{item.name}</td>
                   <td>{item.email}</td>
                   <td className="">
-                    <a className="me-1">
-                    <i className="fa-solid fa-trash" style={{color: "#fafafa"}}></i>
+                    <a className="me-1" onClick={() => deletehe(item.id)}>
+                      <i className="fa-solid fa-trash" style={{ color: "#fafafa" }}></i>
                     </a>
                     <Link className="ms-3" to={`/edit/${item.id}`}>
-                    <i className="fa-solid fa-pen-nib" style={{color: "#efeff1"}}></i>
+                      <i className="fa-solid fa-pen-nib" style={{ color: "#efeff1" }}></i>
                     </Link>
                   </td>
-                
+
                 </tr>
               ))}
             </tbody>
@@ -62,4 +92,4 @@ function Api() {
   );
 }
 
-export default Api;
+export default React.memo(Api);

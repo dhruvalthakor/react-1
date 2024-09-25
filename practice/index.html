@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container"> </div>
+    <div class="container1"> </div>
+</body>
+<script>
+
+// 1. Write a JavaScript program to display the current day and time in the following format.  
+let day=["Sunday","Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ]
+
+let container=document.querySelector(".container")
+let date = new Date()
+        let hours = date.getHours()
+        let minutes = date.getMinutes()
+        let seconds = date.getSeconds()
+        let data=date.getDay()
+        let time = `${day[data]}:${hours} : ${minutes} : ${seconds}`
+        console.log("time is ", time);
+       
+// 2. Write a JavaScript program to print the current window contents.  
+
+// function printWindowContents() {
+//     window.print();
+// }
+// printWindowContents();
+
+
+// 3. Write a JavaScript program to get the current date.  
+
+
+let dd=date.getDay()
+let mm =date.getMonth()
+let yyyy =date.getFullYear()
+
+  container.innerHTML = 
+        `
+        <h1> ${time}</h1>
+        <h1> ${mm}-${dd}-${yyyy}</h1>
+        <h1> ${mm}/${dd}/${yyyy}</h1>
+        <h1> ${dd}-${mm}-${yyyy}</h1>
+        <h1> ${dd}/${mm}/${yyyy}</h1>
+        `
+
+
+      
+
+        // 4. Write a JavaScript program to find the area of a triangle where three sides are 5, 6, 7.  
+
+        let container1=document.querySelector(".container1")
+const side1 = 5;
+const side2 = 6;
+const side3 = 7;
+
+
+const s = (side1 + side2 + side3) / 2;
+
+
+const area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+
+container1.innerHTML=`
+<h1>The area of the triangle is ${area}</h1>
+`
+console.log();
+
+
+
+
+
+// 8. Write a JavaScript program to return the minimum-maximum value of an array.
+
+// function getMinMax(arr) {
+//     if (arr.length === 0) {
+//         return { min: null, max: null };
+//     }
+const numbers = [3, 5, 7, 2, 8, -1, 4, 10, 12];
+
+   console.log(Math.min(...numbers));
+ 
+  console.log( Math.max(...numbers));
+
+
+
+
+
+
+// 9. Write a JavaScript program to remove specified elements from the left of a given array of elements.
+
+const array9 = [1, 2, 3,4,5,6];
+
+const firstElement = array9.shift();
+
+console.log("qution-9:- ",array9);
+
+
+
+
+
+// 10. Write a JavaScript conditional statement to sort three numbers. Display an alert box to show the results.
+// Sample numbers : 0, -1, 4
+// Output : 4, 0, -1
+
+ var arr10 = [ 0, -1, 4];
+
+
+ const threenumbers = arr10.sort((a, b) => b- a);
+// alert(`10.sort three numbers:- ${threenumbers}`)
+console.log(threenumbers);
+
+
+
+
+
+// 11. Write a JavaScript conditional statement to find the largest of five numbers. Display an alert box to show the results.
+// Sample numbers : -5, -2, -6, 0, -1
+
+// let arr=[ -5, -2, -6, 0, -1]
+// let bignumber=0;
+
+// for (let i = 0; i < arr.length; i++) {
+//     if (bignumber<arr[i]) {
+//         bignumber=arr[i]
+//     }
+// }
+
+// alert(`bignumber:- ${bignumber}`)
+
+
+
+
+
+
+// 12. Write a JavaScript for loop that iterates from 0 to 15. For each iteration, it checks if the current number is odd or even, and displays a message on the screen.
+
+// let arr=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+// for (let i = 0; i < arr.length; i++) {
+    
+//     if (arr[i]%2===0) {
+//         console.log(arr[i]," is even");
+        
+//     }else{
+//         console.log(arr[i]," is odd");
+
+//     }
+    
+// }
+
+
+// 13. Write a JavaScript program to find the Armstrong numbers of 3 digits.
+// Note : An Armstrong number of three digits is an integer such that the sum of the cubes of its digits is equal to the number itself. For example, 371 is an Armstrong number since 3*3 + 73 + 1*3 = 371.
+
+
+
+
+
+// 14. Write a JavaScript program to construct the following pattern, using a nested for loop.
+
+// let n = 5; 
+
+// for (let i = 1; i <= n; i++) {
+//     let row = '';
+//     for (let j = 1; j <= i; j++) {
+//         row += '* ';
+//     }
+//     console.log(row);
+// }
+
+// 15. Write a JavaScript program to sort the items of an array.
+//  var arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
+
+
+//  const sorted = arr1.sort((a, b) => a - b);
+
+// console.log(sorted);
+
+
+</script>
+</html>

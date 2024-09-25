@@ -12,17 +12,17 @@ function Editdata() {
   });
   const navigate = useNavigate();
 
+  
+
   useEffect(() => {
-    axios.get('http://localhost:4040/users')
+    axios.get(`http://localhost:4040/users/${params.i}`)
       .then((res) => {
-          
-          const editData = res.data.find((e, i) => e.id == params.i);
-          if (editData) {
+        
               setFormData({
-                  name: editData.name,
-                  email: editData.email
+                  name: res.data.name||"",
+                  email: res.data.email||""
                 });
-            }
+       
         
       })
       .catch((err) => console.log(err));
@@ -71,11 +71,11 @@ function Editdata() {
               required
             />
           </div>
-          <button type="submit" className="btn btn-success w-100 rounded-pill">Submit</button>
+          <button type="submit" className="btn btn-success w-100 rounded-pill">updeta</button>
         </form>
       </div>
     </div>
   );
 }
 
-export default Editdata;
+export default React.memo(Editdata);

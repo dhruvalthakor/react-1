@@ -62,4 +62,4 @@ function Display() {
   );
 }
 
-export default Display;
+export default React.memo(Display);
