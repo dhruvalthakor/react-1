@@ -14,7 +14,7 @@ import Footer from './component/Footer';
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/Signup",
       element: <><Signup/></>,
     },
     {
@@ -22,7 +22,7 @@ function App() {
       element: <><Login/></>,
     },
     {
-      path: "/home",
+      path: "/",
       element: <><Home/><Footer/></>,
     },
     {

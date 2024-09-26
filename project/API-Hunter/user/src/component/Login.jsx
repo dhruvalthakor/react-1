@@ -32,14 +32,14 @@ function Login() {
 
         if (user) {
             if (user.password === form.password) {
-
-                axios.post(`http://localhost:4040/login`, user)
+              const  mainuser=user
+                axios.post(`http://localhost:4040/login`, mainuser)
                 .then((res) => {
                     console.log("User created", res.data)
                 })
                 .catch(err => console.log(err))
                 
-                navigate("/home")
+                navigate("/")
             } else {
                 alert("Invalid password")
             }
@@ -77,12 +77,12 @@ function Login() {
                             />
                             <label htmlFor="floatingPassword">Password</label>
                         </div>
-                        <Link to={"/Forgotpassword"}  className="text-decoration-none">forgot password</Link>
+                        <Link to={"/Forgotpassword"}  className="text-decoration-none">forgot password?</Link>
                         <button className="btn btn-primary w-100 mt-3">Login</button>
                     </form>
 
                     <div className="mt-4 text-center">
-                        <p>Don't have an account?  <Link to={"/"}  className="text-decoration-none">Sign Up</Link></p>
+                        <p>Don't have an account?  <Link to={"/Signup"}  className="text-decoration-none">Sign Up</Link></p>
                     </div>
                 </div>
             </div>

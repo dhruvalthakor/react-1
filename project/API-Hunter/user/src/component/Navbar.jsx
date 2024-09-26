@@ -1,43 +1,55 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-function Navbar({name}) {
+function Navbar() {
+    const [users, setUsers] = useState("")
+const navigate = useNavigate()
+
+
+useEffect(() => {
+    axios.get(`http://localhost:4040/login/1`)
+        .then((res) => setUsers(res.data))
+        .catch(err => console.log(err))
+}, [])
+
+
+
+    function logouthandle() {
+    
+            axios.delete(`http://localhost:4040/login/1`,{})
+                .then((res) => navigate("/login"))
+                .catch(err => console.log(err))
+    
+
+    }
+
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-secondary">
                 <div className="container">
-                    <a className="navbar-brand" href="#">{name}</a>
+                    <a className="navbar-brand" href="#"><h5>Home</h5></a>
+                    <a className="navbar-brand" href="#"><h5>{users.name}</h5></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        {/* <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Link</a>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
-                                </a>
-                                <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Action</a></li>
-                                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr className="dropdown-divider" /></li>
-                                    <li><a className="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-                            </li>
-                        </ul> */}
-
+                    <div className="collapse navbar-collapse justify-content-end flex-grow-0" id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            {users ? (
+                                <li className="nav-item">
+                                    <Link className="nav-link active" href="#" onClick={logouthandle}>Log out</Link>
+                                </li>
+                             ) : ( 
+                                <li className="nav-item">
+                                    <Link className="nav-link active " aria-current="page" to="/login">Login</Link>
+                                </li>
+                             )} 
+                        </ul>
                     </div>
                 </div>
             </nav>
         </>
-    )
+    );
 }
 
-export default Navbar
+export default Navbar;

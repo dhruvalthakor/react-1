@@ -3,24 +3,9 @@ import React, {  useEffect, useState } from 'react'
 import Navbar from './Navbar'
 
 function Home() {
-  const [users, setUsers] = useState([])
+
   const [list, setlist] = useState([]);
  
-
-const main= users.map((item)=>{
-return item.name
-  
-})
-
-
-  useEffect(() => {
-    axios.get(`http://localhost:4040/login`)
-        .then((res) => setUsers(res.data))
-        .catch(err => console.log(err))
-}, [])
-
-
-
 
 useEffect(() => {
   const dateff = async () => {
@@ -39,7 +24,7 @@ useEffect(() => {
 
   return (
     <>
-      <Navbar name={`${main}`}/>
+      <Navbar />
 <section className="container d-flex justify-content-center flex-wrap gap-3 mt-4">
   {
     list.map((product) => (

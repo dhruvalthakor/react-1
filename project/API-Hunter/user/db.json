@@ -3,16 +3,15 @@
     {
       "name": "Nishitgadav",
       "email": "test@email.com",
-      "password": "678",
+      "password": "4567",
       "id": 1
+    },
+    {
+      "name": "dhruval",
+      "email": "ssxsax@gmail.com",
+      "password": "6789",
+      "id": 2
     }
   ],
-  "login": [
-    {
-      "name": "Nishitgadav",
-      "email": "test@email.com",
-      "password": "678",
-      "id": 1
-    }
-  ]
+  "login": []
 }

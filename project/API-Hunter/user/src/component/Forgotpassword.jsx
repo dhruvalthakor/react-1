@@ -8,12 +8,12 @@ import Typography from '@mui/material/Typography';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const steps = ['Enter email', 'Set new password', 'chenga password'];
+const steps = ['Enter email', 'Set new password', 'change password'];
 
 function Forgotpassword() {
     const [activeStep, setActiveStep] = useState(0);
     const [users, setUsers] = useState([])
-    const [chenga, setchenga] = useState("")
+    const [change, setchange] = useState("")
     const [form, setForm] = useState({
         email: "",
         password: ""
@@ -23,11 +23,11 @@ function Forgotpassword() {
     // app get 
     useEffect(() => {
         axios.get(`http://localhost:4040/users`)
-        .then((res) => {
-            console.log(res.data); 
-            setUsers(res.data);
-        })
-        .catch(err => console.log(err))
+            .then((res) => {
+                console.log(res.data);
+                setUsers(res.data);
+            })
+            .catch(err => console.log(err))
     }, [])
 
 
@@ -38,51 +38,49 @@ function Forgotpassword() {
     };
 
     const handleNext = () => {
-        let newSkipped = skipped;
-        if (isStepSkipped(activeStep)) {
-            newSkipped = new Set(newSkipped.values());
-            newSkipped.delete(activeStep);
+
+
+
+        // Step-specific logic
+        if (activeStep === 0) {
+            const user = users.find((item) => item.email === form.email);
+            setchange(user)
+
+
+            if (!user) {
+                alert("User not found! Please enter a valid email.");
+                // return;
+            }
+        }
+
+        if (activeStep === 1) {
+            change.password = form.password
+            console.log(change);
+
+        }
+
+        if (activeStep === 2) {
+            axios.put(`http://localhost:4040/users/${change.id}`, change)
+                .then((res) => {
+                    console.log(res);
+                    navigate("/login")
+                })
+                .catch((err) => console.log(err));
+
+
+
+            setchange("")
+
         }
 
 
-  // Step-specific logic
-  if (activeStep === 0) {
-    const user = users.find((item) => item.email === form.email);
-    setchenga(user)
 
-    
-    if (!user) {
-        alert("User not found! Please enter a valid email.");
-        return;
-    }
-}
-
-if (activeStep === 1) {
-    chenga.password= form.password
-    console.log(chenga);
-
-}
-
-if (activeStep === 2) {
-    axios.put(`http://localhost:4040/users/${chenga.id}`,chenga)
-      .then((res) => {
-        console.log(res);
-        navigate("/login")
-      })
-      .catch((err) => console.log(err));
-
-
-  
-setchenga("")
-
-}
-
-
-
-        setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        setSkipped(newSkipped);
-
-    
+        if (change=="") {
+            alert("enter")
+        } else{
+            setActiveStep((prevActiveStep) => prevActiveStep + 1);
+            setSkipped(newSkipped);
+        }
 
 
     };
@@ -112,21 +110,21 @@ setchenga("")
                 </div>;
             case 1:
                 return <div className="form-floating mb-3 w-75">
-                <input
-                    type="password"
-                    className="form-control"
-                    id="floatingPassword"
-                    placeholder="New Password"
-                    value={form.password}
-                    onChange={(e) => setForm({ ...form, password: e.target.value })}
-                />
-                <label htmlFor="floatingPassword">New Password</label>
-            </div>;
+                    <input
+                        type="password"
+                        className="form-control"
+                        id="floatingPassword"
+                        placeholder="New Password"
+                        value={form.password}
+                        onChange={(e) => setForm({ ...form, password: e.target.value })}
+                    />
+                    <label htmlFor="floatingPassword">New Password</label>
+                </div>;
             case 2:
                 return <div className="form-floating mb-3 w-75">
-                    <h4>you password is chenga</h4>
+                    <h4>you password is change</h4>
                 </div>;
-            
+
             default:
                 return null;
         }
