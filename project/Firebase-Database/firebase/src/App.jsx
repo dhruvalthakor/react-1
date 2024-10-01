@@ -1,16 +1,31 @@
 import React from 'react'
-
-import Usesignup from './component/Usesignup'
-import Usersighin from './component/Usersighin'
 import Table from './component/Table'
 import Heelo from './component/Heelo'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <> <Table/></>,
+    },
+    {
+      path: "/from",
+      element: <> <Heelo/></>,
+    },
+  ]);
+
+
   return (
     <>
-     <Heelo/>
+
     
-     <Table/>
+<RouterProvider router={router} />
+    
+    
     </>
   )
 }
