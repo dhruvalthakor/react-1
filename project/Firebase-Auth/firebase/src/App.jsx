@@ -10,13 +10,13 @@ const auth = getAuth();
 function App() {
   const [user, setUser] = useState(null);
 
-  // Function to handle sign out
+
   function signout() {
     signOut(auth)
       .then(() => {
         console.log('User signed out');
-        // Redirect to home page after sign out
-        window.location.href = '/'; // Use this for navigation after sign-out
+      
+        window.location.href = '/'; 
       })
       .catch((error) => {
         console.error('Sign out error', error);
@@ -51,9 +51,9 @@ function App() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user); // User is signed in
+        setUser(user); 
       } else {
-        setUser(null); // User is signed out
+        setUser(null); 
       }
     });
   }, []);
