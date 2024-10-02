@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Table() {
   const [data, setData] = useState([]);
-  const [main, setMain] = useState([]);
+  
 
 
   const db = getDatabase(app);
@@ -15,7 +15,7 @@ function Table() {
 
 
     onValue(starCountRef, (snapshot) => {
-      const fetchedData = snapshot.val();
+      const fetchedData =Object.values(snapshot.val());
 
       
 
@@ -26,7 +26,7 @@ function Table() {
   }, [db]);
 
 
-console.log(data);
+
 
   function deletehe() {
 
@@ -37,12 +37,12 @@ console.log(data);
     <>
       <div className="d-flex justify-content-center align-items-center flex-column container mt-5 text-center ">
         <Link to={"/from"}><button className="btn btn-dark">Add</button></Link>
-        {/* <table className="table table-dark table-hover w-75 mt-5">
+         <table className="table table-dark table-hover w-75 mt-5">
           <thead>
             <tr>
 
-              <th scope="col" className="text-uppercase"> action</th>
-              <th scope="col" className="text-uppercase"> action</th>
+              <th scope="col" className="text-uppercase"> Name</th>
+              <th scope="col" className="text-uppercase"> Email</th>
               <th scope="col" className="text-uppercase"> action</th>
             
             </tr>
@@ -66,7 +66,7 @@ console.log(data);
             ))}
           </tbody>
         </table>
- */}
+ 
 
       </div>
     </>

@@ -1,26 +1,20 @@
 import React from 'react'
-import Table from './component/Table'
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Edit from './component/Edit';
-import Add from './component/Add';
+import Navbar from './component/Navbar';
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <> <Table/></>,
+      element: <><Navbar/> </>,
     },
-    { 
+    {
       path: "/from",
-      element: <> <Add/></>,
-    },
-    { 
-      path: "/edit/:id",
-      element: <> <Edit/></>,
+      element: <> </>,
     },
   ]);
 

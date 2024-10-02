@@ -27,12 +27,12 @@ createUserWithEmailAndPassword(auth,from.email,from.password).then(()=>alert("us
         <h1 className="text-white">user </h1>
         <div className="col">
             <label htmlFor="">user email</label>
-            <input type="text" name="" id="" required placeholder='enter email ' className="form-control" value={from.email}
+            <input type="text" name="email" id="user-email" required placeholder='enter email ' className="form-control" value={from.email}
              onChange={(e)=>setFrom({...from,email:e.target.value})}/>
         </div>
         <div className="col  my-4">
             <label htmlFor="">user password</label>
-            <input type="password" name="" id="" required placeholder='enter password ' className="form-control" value={from.password} onChange={(e)=>setFrom({...from,password:e.target.value})}/>
+            <input type="password" name="password" id="user-password" required placeholder='enter password ' className="form-control" value={from.password} onChange={(e)=>setFrom({...from,password:e.target.value})}/>
         </div>
         <div className="col">
            <button className="btn btn-danger" onClick={sighupuser}>submit</button>
