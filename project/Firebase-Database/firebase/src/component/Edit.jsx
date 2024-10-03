@@ -4,7 +4,7 @@ import { app } from '../firebase';
 import { useNavigate, useParams } from 'react-router-dom';
 
 function Edit() {
-  const { id } = useParams(); // Extract id from params
+  const { id } = useParams(); 
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -13,38 +13,41 @@ function Edit() {
   const navigate = useNavigate();
   const db = getDatabase(app);
 
-  // Fetch the data of the specific user when the component mounts
+ 
   useEffect(() => {
-    const userRef = ref(db, `user/`);
-    onValue(userRef, (snapshot) => {
-      const data =Object.values(snapshot.val());
-      const update=data.find((e)=>e.id==id)
-      
-      if (update) {
-        setForm({
-          name: update.name,
-          email: update.email,
-          password: update.password
-        });
-      }
-    });
+    if (id) {
+      const userRef = ref(db, `users/${id}`); 
+      onValue(userRef, (snapshot) => {
+        const data = snapshot.val();
+        
+        if (data) {
+          setForm({
+            name: data.name,
+            email: data.email,
+            password: data.password
+          });
+        } else {
+          console.log("No data found for the user");
+        }
+      });
+    }
   }, [db, id]);
 
+  
   const sendData = () => {
     if (!form.name || !form.email || !form.password) {
       alert("All fields are required.");
     } else {
-      set(ref(db, `user/`), {
-        id: id, // Use existing id to update the user
+      set(ref(db, `users/${id}`), {
+        id: id, 
         name: form.name,
         email: form.email,
         password: form.password
       })
-        .then(() => navigate("/")) // Navigate after update
+        .then(() => navigate("/")) 
         .catch((err) => console.log(err));
     }
   };
-
 
   return (
     <>
@@ -97,3 +100,4 @@ function Edit() {
 }
 
 export default Edit;
+
