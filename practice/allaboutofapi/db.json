@@ -1,24 +1,3 @@
 {
-  "users": [
-    {
-      "name": "Nishitgadav",
-      "email": "test@email.com",
-      "id": 1
-    },
-    {
-      "name": "hello woeldsdsfsf",
-      "email": "dhruval@gmail.com",
-      "id": 2
-    },
-    {
-      "name": "c",
-      "email": "sajja@gmail.com",
-      "id": 3
-    },
-    {
-      "name": "Nishitgadavcsdc",
-      "email": "dhruval@gmail.com",
-      "id": 4
-    }
-  ]
+  "users": []
 }

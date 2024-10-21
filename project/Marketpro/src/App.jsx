@@ -1,33 +1,78 @@
-import React from 'react'
+import React, { useState } from "react";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Navbar from './component/Navbar';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Navbar from "./component/Navbar";
+import Home from "./component/Home";
+import Cart from "./component/Cart";
+import Shop from "./component/Shop";
+import UserContext from "./context/context";
+import Footer from "./component/Footer";
+import Login from "./component/login";
+import Wishlistdata from "./component/Wishlistdata";
 
 function App() {
+  const [Data, setData] = useState("");
+
+
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <><Navbar/> </>,
+      element: (
+        <>
+          <Navbar Data={Data} setData={setData}/> <Home /><Footer/>
+        </>
+      ),
     },
     {
-      path: "/from",
-      element: <> </>,
+      path: "/cart",
+      element: (
+        <>
+          <Navbar />
+          <Cart />
+          <Footer/>
+        </>
+      ),
+    },
+    {
+      path: "/shop",
+      element: (
+        <>
+          <Navbar />
+          <Shop />
+          <Footer/>
+        </>
+      ),
+    },
+    {
+      path: "/login",
+      element: (
+        <>
+          <Login/>
+        </>
+      ),
+    },
+    {
+      path: "/wishlist",
+      element: (
+        <>
+        <Navbar />
+          <Wishlistdata/>
+          <Footer/>
+        </>
+      ),
     },
   ]);
 
-
   return (
     <>
+      <UserContext.Provider value={{Data, setData}}>
+      <RouterProvider router={router} />
+      </UserContext.Provider>
 
-    
-<RouterProvider router={router} />
-    
-    
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;

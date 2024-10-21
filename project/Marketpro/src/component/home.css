@@ -1,0 +1,371 @@
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.ratings .review-count {
+  margin-left: 8px;
+  color: #777;
+}
+
+.price-details {
+  margin-top: 10px;
+}
+
+.discount {
+  font-size: 0.9rem;
+  color: #d9534f;
+}
+
+.festival {
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+.current-price {
+  font-weight: bold;
+  color: #5cb85c;
+}
+
+.original-price {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.delivery-info,
+.free-delivery {
+  font-size: 0.85rem;
+  margin: 5px 0;
+}
+
+.shop-btn:hover {
+  background-color: white !important;
+  color: darkblue !important;
+}
+
+.shop-btn:hover i {
+  color: rgb(6, 16, 133) !important;
+}
+
+/* 3 card css */
+.custom-card-container {
+  padding: 20px;
+}
+
+.custom-product-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-product-card img {
+  width: 100px;
+}
+
+/* Unique classes for different cards */
+.card-one {
+  background-color: #d5e8d4;
+}
+
+.card-two {
+  background-color: #f9d0d0;
+}
+
+.card-three {
+  background-color: #f9c6a7;
+}
+
+.custom-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-deal-info {
+  color: #6d6d6d;
+  font-size: 14px;
+}
+
+.custom-product-name {
+  color: #333;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.custom-shop-now {
+  color: #333;
+  font-size: 16px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+}
+
+.custom-shop-now:hover {
+  color: #d9534f;
+  text-decoration: underline #d9534f;
+}
+
+.custom-shop-now span {
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.deal-img {
+  max-width: 100px;
+  object-fit: contain;
+}
+
+
+
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .custom-product-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-product-card img {
+    margin-top: 20px;
+    max-width: 150px;
+  }
+
+  .custom-card-container {
+    padding: 10px;
+  }
+  .side-img{
+    width: 65% !important;
+    /* height: 100% !important; */
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-product-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .custom-product-card img {
+    margin-top: 15px;
+  }
+
+  .banner-item-two__title {
+    font-size: 1.8rem;
+  }
+
+  .shop-btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .deal-img {
+    max-width: 100px;
+  }
+  
+  .side-img{
+    display: none;
+  }
+}
+
+
+/* ---------- */
+
+
+.card {
+  border-radius: 10px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.carousel-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carousel-item {
+  width: 25%;
+}
+
+.card-body h6 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card-body p {
+  font-size: 0.9rem;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.carousel-item img {
+  max-width: 150px;
+}
+
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.banner {
+  background-color: #e0e7ff;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.banner h2 {
+  font-weight: 600;
+  color: #333;
+}
+
+.banner h3 {
+  color: #777;
+}
+
+.banner img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.9rem;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+.card-Selling{
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* baner  */
+
+.cyber-sale-banner {
+
+ background-image: url("https://react.marketpro.wowtheme7.com/assets/images/bg/day-sale-bg.png");
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.cyber-sale-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cyber-sale-left-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.cyber-sale-left-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.cyber-sale-left-content p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.cyber-sale-shop-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cyber-sale-right-content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cyber-sale-girl-img {
+  width: 250px;
+  margin-right: 20px;
+}
+
+.cyber-sale-products-img {
+  width: 300px;
+}

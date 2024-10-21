@@ -17,10 +17,7 @@ const todoappSlice = createSlice({
       state.tasks.push(action.payload);
     },
     deletehender: (state,action) => {
-
-   
     state.tasks=state.tasks.filter((e) => e.id !==action.payload);
-
     },
     editHandler: (state, action) => {
     

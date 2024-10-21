@@ -59,7 +59,7 @@ function Applist() {
     <div className="container mt-5 w-75">
       <div className="bg-light text-dark rounded-4 p-4 shadow-lg">
         <h1 className="text-center mb-3">Todo List</h1>
-        
+{/*         
         Progress Bar (for visual touch)
         <div className="progress mb-4" style={{ height: "10px" }}>
           <div
@@ -71,8 +71,8 @@ function Applist() {
             aria-valuemin="0"
             aria-valuemax="10"
           ></div>
-        </div>
-        <h1>{tasks.length }</h1>
+        </div> */}
+        {/* <h1>{tasks.length }</h1>  */}
 
     
 

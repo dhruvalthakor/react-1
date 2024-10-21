@@ -11,7 +11,20 @@
       "email": "ssxsax@gmail.com",
       "password": "6789",
       "id": 2
+    },
+    {
+      "name": "dhruval",
+      "email": "d@gmail.com",
+      "password": "654321",
+      "id": 3
     }
   ],
-  "login": []
+  "login": [
+    {
+      "name": "dhruval",
+      "email": "d@gmail.com",
+      "password": "123456",
+      "id": 3
+    }
+  ]
 }

@@ -13,7 +13,6 @@ function User() {
             let data = await fetchs.json();
             setuser(data);
             console.log(data);
-
         }
         datahenling()
     }, [])
