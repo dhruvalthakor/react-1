@@ -9,7 +9,7 @@ import { json, Link } from 'react-router-dom';
 
 
 function Home() {
-  const [Wishlistdata, setWishlistdata] = useState(JSON.parse(localStorage.getItem("Wishlistdata"))||[]);
+  const [Wishlistdata, setWishlistdata] = useState(JSON.parse(localStorage.getItem("Wishlist")) || []);
   const count = useSelector((state) => state.addcart.items)
   let products = ProductData || [];
   const db = getDatabase(app);
@@ -19,8 +19,14 @@ function Home() {
 
 
 
+  
+  useEffect(() => {
+    localStorage.setItem("Wishlist", JSON.stringify(Wishlistdata));
+  }, [Wishlistdata]);
+
+  
   function wishlistdata(ele) {
-    // Check if the item is already in the wishlist to avoid duplication
+   
     if (!Wishlistdata.find(item => item.id === ele.id)) {
       const updatedWishlist = [...Wishlistdata, ele];
       setWishlistdata(updatedWishlist);
@@ -125,11 +131,11 @@ function Home() {
                  <span class="text-primary">₹{ele.price.amount}</span>/-
                </p>
               <div className="d-flex gap-2 align-items-center"> <Link class="btn btn-outline-success btn-sm" to={"/shop"}>Shop Now</Link>
-              {Wishlistdata.map((pro)=>(pro.id=ele.id?(
-                <i class="fa-solid fa-heart fa-xl position-absolute" style={{right:"10px",top:"15px"}}></i>
-              ):(
-                 <i class="fa-regular fa-heart fa-xl position-absolute" onClick={()=>wishlistdata(ele)} style={{right:"10px",top:"15px"}}></i>
-              )))}
+              {Wishlistdata.find(pro => pro.id === ele.id) ? (
+          <i className="fa-solid fa-heart fa-xl position-absolute" style={{ right: "10px", top: "15px" }}></i>
+        ) : (
+          <i className="fa-regular fa-heart fa-xl position-absolute" onClick={() => wishlistdata(ele)} style={{ right: "10px", top: "15px" }}></i>
+        )}
              
               </div>
              </div>
@@ -187,11 +193,11 @@ function Home() {
                  <span class="text-primary">₹{ele.price.amount}</span>/-
                </p>
               <div className="d-flex gap-2 align-items-center"> <Link class="btn btn-outline-success btn-sm" to={"/shop"}>Shop Now</Link>
-              {Wishlistdata.map((pro)=>(pro.id=ele.id?(
-                <i class="fa-solid fa-heart fa-xl position-absolute" style={{right:"10px",top:"15px"}}></i>
-              ):(
-                 <i class="fa-regular fa-heart fa-xl position-absolute" onClick={()=>wishlistdata(ele)} style={{right:"10px",top:"15px"}}></i>
-              )))}
+              {Wishlistdata.find(pro => pro.id === ele.id) ? (
+          <i className="fa-solid fa-heart fa-xl position-absolute" style={{ right: "10px", top: "15px" }}></i>
+        ) : (
+          <i className="fa-regular fa-heart fa-xl position-absolute" onClick={() => wishlistdata(ele)} style={{ right: "10px", top: "15px" }}></i>
+        )}
              
               </div>
              </div>

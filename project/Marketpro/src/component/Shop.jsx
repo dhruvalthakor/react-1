@@ -13,7 +13,7 @@ function Shop() {
   const [filter, setFilter] = useState('');
   const [Brand, setBrand] = useState('');
   const [sortData, setSortData] = useState('');
-  const [Wishlistdata, setWishlistdata] = useState(JSON.parse(localStorage.getItem("Wishlistdata")) || []);
+  const [Wishlistdata, setWishlistdata] = useState(JSON.parse(localStorage.getItem("Wishlist")) || []);
   const count = useSelector((state) => state.addcart.items)
   let products = ProductData || [];
   const db = getDatabase(app);
@@ -22,11 +22,13 @@ function Shop() {
 
 
 
+  useEffect(() => {
+    localStorage.setItem("Wishlist", JSON.stringify(Wishlistdata));
+  }, [Wishlistdata]);
 
-
-
+  
   function wishlistdata(ele) {
-    // Check if the item is already in the wishlist to avoid duplication
+   
     if (!Wishlistdata.find(item => item.id === ele.id)) {
       const updatedWishlist = [...Wishlistdata, ele];
       setWishlistdata(updatedWishlist);
@@ -42,7 +44,7 @@ function Shop() {
             <i className="fa-solid fa-house" style={{ color: "black" }}></i> Home
           </NavLink>
           <i className="fa-solid fa-angle-right"></i>
-          <Link to={"/cart"} className="text-decoration-none text-danger">shop</Link>
+          <Link to={"/shop"} className="text-decoration-none text-danger">shop</Link>
         </div>
       </div>
 
@@ -74,17 +76,7 @@ function Shop() {
               </div>
             </div>
 
-            <div className="card mt-5">
-              <div className="card-body" style={{ textAlign: 'left' }}>
-                <h1 className="card-title fs-4 fw-bold">Sort by price</h1>
-                <hr />
-                <ul className="list-group list-group-flush list-unstyled" style={{ height: "150px" }}>
-                  <li className="mt-3"><button className=" btn" value="" onClick={(e) => setSortData(e.target.value)}>Clear</button></li>
-                  <li className="mt-3"><button className=" btn" value="Low to high" onClick={(e) => setSortData(e.target.value)} >Low to high</button></li>
-                  <li className="mt-3"><button className=" btn" value="high to low" onClick={(e) => setSortData(e.target.value)} >high to low</button></li>
-                </ul>
-              </div>
-            </div>
+        
 
             <div className="card mt-5">
               <div className="card-body" style={{ textAlign: 'left' }}>
@@ -126,8 +118,9 @@ function Shop() {
                 <div className="dropdown">
                   <button className="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown">Sort by</button>
                   <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="#">Popular</a></li>
-                    {/* Add more sorting options */}
+                    <li className="mt-3"><button className=" btn dropdown-item" value="" onClick={(e) => setSortData(e.target.value)}>Clear</button></li>
+                  <li className="mt-3"><button className=" btn dropdown-item" value="Low to high" onClick={(e) => setSortData(e.target.value)} >Low to high</button></li>
+                  <li className="mt-3"><button className=" btn dropdown-item" value="high to low" onClick={(e) => setSortData(e.target.value)} >high to low</button></li>
                   </ul>
                 </div>
               </div>
@@ -169,11 +162,11 @@ function Shop() {
                         <button className="btn btn-danger mt-3" onClick={() => dispatch(addhender(ele))}>
                           Add to Cart
                         </button>
-                        {Wishlistdata.map((pro) => (pro.id === ele.id ? (
-                          <i class="fa-solid fa-heart fa-xl position-absolute" style={{ right: "10px", top: "15px" }}></i>
-                        ) : (
-                          <i class="fa-regular fa-heart fa-xl position-absolute" onClick={() => wishlistdata(ele)} style={{ right: "10px", top: "15px" }}></i>
-                        )))}
+                        {Wishlistdata.find(pro => pro.id === ele.id) ? (
+          <i className="fa-solid fa-heart fa-xl position-absolute" style={{ right: "10px", top: "15px" }}></i>
+        ) : (
+          <i className="fa-regular fa-heart fa-xl position-absolute" onClick={() => wishlistdata(ele)} style={{ right: "10px", top: "15px" }}></i>
+        )}
                       </div>
                     </div>
                   </div>
