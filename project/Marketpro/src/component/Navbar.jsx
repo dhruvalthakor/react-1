@@ -20,7 +20,7 @@ function Navbar() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <a className="navbar-brand fs-2 text-white" href="#">
-                        <img src="src/assets/logo-two.png" alt="Logo" />
+                        {/* <img src="src/assets/logo-two.png" alt="Logo" /> */}
                     marketpro
                     </a>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo03">

@@ -9,7 +9,10 @@ function Footer() {
     <div className="row">
       {/* <!-- Company Info --> */}
       <div className="col-md-3">
-        <h5><img src="src/assets/logo-two-black.png" alt="Logo" className="w-75" /></h5>
+        <h5>
+          {/* <img src="src/assets/logo-two-black.png" alt="Logo" className="w-75" /> */}
+          marketpro
+          </h5>
         <p>Marketpro has become the largest computer parts, gaming PC parts, and other IT-related products provider.</p>
         <ul className="list-unstyled">
           <li><i className="fas fa-phone" style={{color:"darkorange"}}></i> +00 123 456 789</li>
