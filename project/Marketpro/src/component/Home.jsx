@@ -37,35 +37,31 @@ function Home() {
     <>
 <section>
   <div className="container-fluid d-flex justify-content-center mt-3">
-    <div className="card p-2 border border-0" style={{ width: "98%", height: "auto" }}>
+    <div className="card p-2 border-0" style={{ width: "98%" }}>
       <img
         src="https://react.marketpro.wowtheme7.com/assets/images/bg/banner-two-bg.png"
         className="card-img object-fit-cover img-fluid"
-        alt="..."
+        alt="Background"
+        style={{ maxHeight: "100%" }}
       />
-      <div className="card-img-overlay d-flex justify-content-end flex-column align-items-center">
-        <div className="mb-3" style={{ maxWidth: "840px", width: "100%" }}>
-          <div className="row g-0">
-            <div className="col-md-6 d-flex">
-              <div className="card-body d-flex flex-column justify-content-center text-white">
-                <span className="text-white mb-2 h3">Starting at only $250</span>
-                <h1 className="banner-item-two__title bounce text-white">
-                  Get The Sound You Love For Less
-                </h1>
-                <Link className="card-text" to={"/shop"}>
-                  <button className="shop-btn btn text-white border border-1 rounded-5 px-4 py-2">
-                    Shop Now <i className="fa-solid fa-cart-shopping" style={{ color: "#f2f2f2" }}></i>
-                  </button>
-                </Link>
-              </div>
-            </div>
-            <div className="col-md-6 d-flex justify-content-center d-sm-none">
-              <img
-                src="https://react.marketpro.wowtheme7.com/assets/images/thumbs/banner-two-img.png"
-                className="img-fluid rounded-start object-fit-cover side-img"
-                alt="..."
-              />
-            </div>
+      <div className="card-img-overlay d-flex justify-content-center align-items-center flex-column">
+        <div className="row w-100" style={{ maxWidth: "840px" }}>
+          <div className="col-md-6 d-flex flex-column justify-content-center text-center text-md-start text-white">
+            <span className="text-white mb-2 h3">Starting at only $250</span>
+            <h1 className="banner-item-two__title text-white">Get The Sound You Love For Less</h1>
+            <Link className="mt-3" to={"/shop"}>
+              <button className="shop-btn btn text-white border border-1 rounded-5 px-4 py-2">
+                Shop Now <i className="fa-solid fa-cart-shopping" style={{ color: "#f2f2f2" }}></i>
+              </button>
+            </Link>
+          </div>
+          <div className="col-md-6 d-none d-md-flex justify-content-center align-items-center">
+            <img
+              src="https://react.marketpro.wowtheme7.com/assets/images/thumbs/banner-two-img.png"
+              className="img-fluid rounded-start object-fit-contain"
+              alt="Product"
+              style={{ maxHeight: "100%" }}
+            />
           </div>
         </div>
       </div>
