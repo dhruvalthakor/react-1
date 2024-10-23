@@ -19,7 +19,7 @@ function Navbar() {
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    {/* <a className="navbar-brand" href="#"><img src="src/assets/logo-two.png" alt="Logo" /></a> */}
+                    <a className="navbar-brand" href="#"><img src="src/assets/logo-two.png" alt="Logo" /></a>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
 
                         {/* Search Form */}
