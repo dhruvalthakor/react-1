@@ -39,7 +39,7 @@ function Home() {
 <section>
   <div className="container-fluid d-flex justify-content-center mt-3">
     <div className="card p-2 border border-0" style={{ width: "98%", height: "605px" }}>
-      <img src="src/assets/banner-two-bg.png" className="card-img object-fit-cover" style={{ width: "100%", height: "100%" }} alt="..." />
+      <img src="https://react.marketpro.wowtheme7.com/assets/images/bg/banner-two-bg.png" className="card-img object-fit-cover" style={{ width: "100%", height: "100%" }} alt="..." />
       <div className="card-img-overlay d-flex justify-content-end flex-column align-items-center">
         <div className="mb-3 " style={{ maxWidth: "840px", width: "100%", height: "83%" }}>
           <div className="row g-0">
