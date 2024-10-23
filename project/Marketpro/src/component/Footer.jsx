@@ -61,8 +61,10 @@ function Footer() {
       <div className="col-md-3">
         <h5 className="text-uppercase mb-4 font-weight-bold" style={{fontfamily:" var(--heading-font-two)"}}>Shop on The Go</h5>
         <p>Marketpro App is available. Get it now.</p>
-        <a href="#"><img src="src/assets/store-img1.png" alt="App Store" className="img-fluid me-2"/></a>
-        <a href="#"><img src="src/assets/store-img2.png" alt="Google Play" className="img-fluid"/></a>
+       <p className="d-flex ">
+       <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDj0QiwPuLMelAVLOK-xIkwVhLOtflcqDfZUiQssV-cF1gX4KcJHHk5MeAVsaexCp1fA&usqp=CAU" alt="App Store" className="img-fluid me-2" style={{width:"1200px" ,marginLeft:"-10px"}}/></a>
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Google_Play_2022_logo.svg/2560px-Google_Play_2022_logo.svg.png" alt="Google Play" className="img-fluid w-50"/></a>
+       </p>
         <ul className="list-inline mt-3">
           <li className="list-inline-item "><a href="#" className="text-dark"><i className="fab fa-facebook" style={{color:"darkorange"}}></i></a></li>
           <li className="list-inline-item"><a href="#" className="text-dark"><i className="fab fa-twitter" style={{color:"darkorange"}}></i></a></li>
