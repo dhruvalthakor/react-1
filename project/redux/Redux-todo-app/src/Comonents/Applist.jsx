@@ -21,16 +21,23 @@ function Applist() {
   }
 
   function handleTaskUpdate() {
+    if (task) {
     const updatedTask = { id: editingId, task };
     dispatch(editHandler(updatedTask));
     setTask("");
     setEditingId(null);
+  } else {
+    alert("Please enter a task");
+  }
   }
 
   function handleTaskEdit(id) {
-    const editedTask = tasks.find((item) => item.id === id);
+
+      const editedTask = tasks.find((item) => item.id === id);
     setTask(editedTask.task);
     setEditingId(id);
+   
+    
   }
 
   const itemData = tasks.map((item) => (

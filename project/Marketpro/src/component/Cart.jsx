@@ -25,49 +25,51 @@ function Cart() {
                 <div className="row">
                     {/* Cart Items Section */}
                     <div className="col-md-8">
-                        <table className="table">
-                            <thead>
-                                <tr className="text-center">
-                                    <th>Delete</th>
-                                    <th>Product Name</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {products.map((product) => (
-                                    <tr key={product.id}>
-                                        <td>
-                                            <button className="btn btn-danger" onClick={() => dispatch(deletehender(product.id))}>Remove</button>
-                                        </td>
-                                        <td>
-                                            <div className="media mb-4">
-                                                <img src={product.image} alt="product" className="img-thumbnail mr-3" style={{ width: "60px" }} />
-                                                <div className="media-body">
-                                                    <h5>{product.name}</h5>
-                                                    <div className="ratings">
-                                                        <span className="text-warning">
-                                                            {"★".repeat(Math.round(product.rating)) + "☆".repeat(5 - Math.round(product.rating))}
-                                                        </span>
-                                                        <span className="review-count">({product.reviews} reviews)</span>
+                        <div className="table-responsive">
+                            <table className="table">
+                                <thead>
+                                    <tr className="text-center">
+                                        <th>Delete</th>
+                                        <th>Product Name</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {products.map((product) => (
+                                        <tr key={product.id}>
+                                            <td data-label="Delete">
+                                                <button className="btn btn-danger" onClick={() => dispatch(deletehender(product.id))}>Remove</button>
+                                            </td>
+                                            <td data-label="Product Name">
+                                                <div className="media mb-4">
+                                                    <img src={product.image} alt="product" className="img-thumbnail mr-3" style={{ width: "60px" }} />
+                                                    <div className="media-body">
+                                                        <h5>{product.name}</h5>
+                                                        <div className="ratings">
+                                                            <span className="text-warning">
+                                                                {"★".repeat(Math.round(product.rating)) + "☆".repeat(5 - Math.round(product.rating))}
+                                                            </span>
+                                                            <span className="review-count">({product.reviews} reviews)</span>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td>₹{product.price.amount}</td>
-                                        <td>
-                                            <div className="input-group">
-                                                <button className="btn btn-outline-secondary" onClick={() => dispatch(decrementQuantity(product.id))}>-</button>
-                                                <input type="text" value={product.quantity} className="form-control text-center" readOnly />
-                                                <button className="btn btn-outline-secondary" onClick={() => dispatch(incrementQuantity(product.id))}>+</button>
-                                            </div>
-                                        </td>
-                                        <td>₹{(product.price.amount * product.quantity)}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                            </td>
+                                            <td data-label="Price">₹{product.price.amount}</td>
+                                            <td data-label="Quantity">
+                                                <div className="d-block d-lg-flex">
+                                                    <button className="btn btn-outline-secondary" onClick={() => dispatch(decrementQuantity(product.id))}>-</button>
+                                                    <input type="text" value={product.quantity} className="form-control text-center" readOnly />
+                                                    <button className="btn btn-outline-secondary" onClick={() => dispatch(incrementQuantity(product.id))}>+</button>
+                                                </div>
+                                            </td>
+                                            <td data-label="Subtotal">₹{(product.price.amount * product.quantity)}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                     {/* Cart Totals Section */}
