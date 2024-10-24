@@ -156,8 +156,8 @@ function Shop() {
                             M.R.P.: <del>₹{(ele.price.amount * 1.3)}</del>
                           </p>
                         </div>
-                        <p className="delivery-info">Get it by <strong>Saturday, October 19</strong></p>
-                        <p className="free-delivery text-success">FREE Delivery by Amazon</p>
+                       
+                        <p className="free-delivery text-success">FREE Delivery </p>
 
                         <button className="btn btn-danger mt-3" onClick={() => dispatch(addhender(ele))}>
                           Add to Cart
