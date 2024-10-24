@@ -10,7 +10,6 @@ function App() {
     <div className="row">
       <div className="col-12"> 
         <div>
-
         <Applist/>
         </div>
         </div>

@@ -1,0 +1,40 @@
+.footer {
+    background-color: #f8f9fa;
+  }
+  
+  .footer h5 {
+    font-size: 1.2rem;
+    color: #212529;
+    margin-bottom: 15px;
+  }
+  
+  .footer p, .footer ul li a {
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+  
+  .footer ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul li i {
+    margin-right: 8px;
+  }
+  
+  .footer ul li a:hover {
+    color: #000;
+  }
+  
+  .footer .list-inline-item i {
+    font-size: 1.2rem;
+  }
+  
+  .footer .list-inline-item a:hover {
+    color: #ff7b54;
+  }
+  
