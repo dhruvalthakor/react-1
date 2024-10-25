@@ -1,12 +1,15 @@
 import React from "react";
-import Add from "./component/Add";
+
+import UploadFile from "./component/UploadFile";
+
 
 
 
 function App() {
   return (
  <>
-<Add/>
+<UploadFile/>
+
  </>
   );
 }
