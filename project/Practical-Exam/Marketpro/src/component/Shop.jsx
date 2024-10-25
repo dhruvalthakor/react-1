@@ -134,7 +134,7 @@ function Shop() {
                 .sort((a, b) => sortData === "Low to high" ? a.price.amount - b.price.amount : 0)
                 .sort((a, b) => sortData === "high to low" ? b.price.amount - a.price.amount : 0)
                 .filter(({ name }) => {
-                  return name.indexOf(value.Data) >= 0;
+                  return name.toLocaleLowerCase().indexOf(value.Data.toLocaleLowerCase()) >= 0;
                 })
                 .map((ele) => (
                   <div key={ele.id} className="col mb-4 position-relative">
