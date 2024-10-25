@@ -14,8 +14,14 @@ const Add = () => {
   const storageRef = ref(storage);
 
 function uploadTodo() {
-  // todos.push({todo})
+  
+  todos.push({todo})
+  console.log(todos);
+
   // const imagesRef = ref(storageRef, todos);
+
+
+  setTodo("")
 }
 
 
@@ -38,7 +44,7 @@ function uploadTodo() {
       <ul>
         {todos.map((item, index) => (
           <li key={index}>
-            {item.text}
+            {item.todo}
             <button onClick={() => startEditTodo(item.fileName, item.text)}>Edit</button>
             <button onClick={() => deleteTodo(item.fileName)}>Delete</button>
           </li>
