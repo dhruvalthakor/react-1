@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import UserContext from '../context/context';
+import { useSelector } from 'react-redux';
 
 function Navbar() {
     const value = useContext(UserContext);
     const navigate = useNavigate();
+
+    const [Wishlistdata, setWishlistdata] = useState(JSON.parse(localStorage.getItem("Wishlist")) || []);
+    const count = useSelector((state) => state.addcart.items)
 
     function sherching() {
         if (value.Data) {
@@ -12,6 +16,8 @@ function Navbar() {
         }
     }
 
+    
+    
     return (
         <>
             <nav className="navbar navbar-expand-lg p-3" style={{ background: "rgb(18,21,53)" }}>
@@ -21,7 +27,7 @@ function Navbar() {
                     </button>
                     <a className="navbar-brand fs-2 text-white" href="#">
                         {/* <img src="src/assets/logo-two.png" alt="Logo" /> */}
-                    marketpro
+                   marketpro
                     </a>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
 
@@ -51,9 +57,11 @@ function Navbar() {
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link text-white text-center" to={"/wishlist"}>
+                                <Link className="nav-link text-white text-center position-relative" to={"/wishlist"}>
                                     <i className="fa-regular fa-heart fa-xl" style={{ color: "#f9fafb" }}></i>
                                     <span className="text-md text-white fs-5 d-none d-md-block">Wishlist</span>
+                                    <span className="position-absolute " style={{right:"4px",top:"-3px"}}>{Wishlistdata.length}</span>
+
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -62,7 +70,7 @@ function Navbar() {
                                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                                     </svg>
                                     <span className="text-md text-white fs-5 d-none d-md-block">Cart</span>
-                                    {/* <span className="position-absolute top-0">1</span> */}
+                                    <span className="position-absolute " style={{right:"4px",top:"-3px"}}>{count.length}</span>
                                 </Link>
                             </li>
                         </ul>

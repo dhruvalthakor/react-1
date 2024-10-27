@@ -97,7 +97,7 @@ const UploadFile = () => {
     };
 
     return (
-        <div className="container mt-4">
+        <div className="container con mt-4">
             <div className="card shadow-sm">
                 <div className="card-body">
                     <h4 className="card-title text-center mb-4">File Upload</h4>
@@ -107,6 +107,7 @@ const UploadFile = () => {
                             {message.text}
                         </div>
                     )}
+                    
                     
                     <div className="mb-3">
                         <input
